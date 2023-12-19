@@ -9,8 +9,11 @@
       var textEntity = marker7.querySelector('a-text');
   
       var markerData = {
-        'marker0': 'El extintor 1 es para agua...',
-        'marker1': 'El extintor 2 es para polvo...',
+        'marker0': 'El extintor 1 es para agua. Para fuegos en madera, ropa, carbón, plásticos, papel, textil y otro material sólido. No apto para todos los tipos de fuego.',
+        'marker1': 'El extintor 2 es para polvo. Para fuegos en material sólido, líquido, gases y eléctricos. No apto para fuegos de sartén o fuegos de metal.',
+        'marker2': 'El extintor 3 es para espuma. Para fuegos en material sólido líquido. No apto para fuegos de gas, metálicos o sartén.',
+        'marker3': 'El extintor 4 es para CO2. Para fuegos provocados por líquidos y electricidad. No apto para matálicos o sartén.',
+        'marker4': 'El extintor 5 es para químico húmedo. Para fuegos que involucran aceites de cocina y grasas. No apto para otros tipos de fuegos.',
         // ...
       };
 
@@ -40,11 +43,26 @@
           gltf-model="./extintores/2-Polvo.glb"
         ></a-entity>
       </a-marker>
+      <a-marker type='barcode' value='2' id='marker2'>
+        <a-entity
+          gltf-model="./extintores/3-Espuma.glb"
+        ></a-entity>
+      </a-marker>
+      <a-marker type='barcode' value='3' id='marker3'>
+        <a-entity
+          gltf-model="./extintores/4-Dioxido-de-carbono.glb"
+        ></a-entity>
+      </a-marker>
+      <a-marker type='barcode' value='4' id='marker4'>
+        <a-entity
+          gltf-model="./extintores/5-Quimico-humedo.glb"
+        ></a-entity>
+      </a-marker>
       <!-- ... -->
       <a-marker type='barcode' value='7' id='marker7'>
-        <a-text value="" width="5" look-at="0 0 0"></a-text>
+        <a-text value="" width="5" wrap-count="24" look-at="#camera"></a-text>
       </a-marker>
-     <a-entity camera></a-entity>
+     <a-entity camera id="camera"></a-entity>
    </a-scene>
  </body>
 </html>
