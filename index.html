@@ -13,15 +13,17 @@
         'marker1': 'El extintor 2 es para polvo...',
         // ...
       };
-  
+
       for (var markerId in markerData) {
-        var marker = document.querySelector('#' + markerId);
-        marker.addEventListener('markerFound', function() {
-          textEntity.setAttribute('value', markerData[markerId]);
-        });
-        marker.addEventListener('markerLost', function() {
-          textEntity.setAttribute('value', '');
-        });
+        (function(id) {
+          var marker = document.querySelector('#' + id);
+          marker.addEventListener('markerFound', function() {
+            textEntity.setAttribute('value', markerData[id]);
+          });
+          marker.addEventListener('markerLost', function() {
+            textEntity.setAttribute('value', '');
+          });
+        })(markerId);
       }
     });
   </script>
