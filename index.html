@@ -42,9 +42,9 @@
       </a-marker>
       <!-- ... -->
       <a-marker type='barcode' value='7' id='marker7'>
-        <a-text value="" width="5" look-at="0 0 0"></a-text>
+        <a-text value="" width="5" wrap-count="24" look-at="#camera"></a-text>
       </a-marker>
-     <a-entity camera></a-entity>
+     <a-entity camera id="camera"></a-entity>
    </a-scene>
  </body>
 </html>
