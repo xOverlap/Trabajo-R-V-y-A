@@ -19,11 +19,11 @@
       for (var markerId in markerData) {
         (function(id) {
           var marker = document.querySelector('#' + id);
-          marker.addEventListener('markerFound', function() {
-            textEntity.setAttribute('value', markerData[id]);
-          });
           marker.addEventListener('markerLost', function() {
             textEntity.setAttribute('value', '');
+          });
+          marker.addEventListener('markerFound', function() {
+            textEntity.setAttribute('value', markerData[id]);
           });
         })(markerId);
       }
